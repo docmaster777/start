@@ -1,6 +1,7 @@
 @import "fonts"
 @import "libs"
 @import "vars"
+@import "smart-grid"
 
 *
 	-webkit-box-sizing: border-box
@@ -45,14 +46,36 @@ body
 	font-family: $default-font
 	overflow-x: hidden
 	opacity: 1
+	margin: 0
 
-.img-responsive
-	display: block
-	max-width: 100%
-	height: auto
+p
+	margin: 0
+	padding: 0	
+
+// .img-responsive
+// 	display: block
+// 	max-width: 100%
+// 	height: auto
+
+.wrapper
+	+wrapper
+	
+.header
+	height: 100px
+	background: $accent
 
 .my
+	+row-flex()
 	p
-		color: #ccc
+
+		+col()
+		+size(4)
+		+md(justify-content, center)
+
+
+
+.footer
+	height: 100px
+	background: $accent
 
 @import "media" // Всегда в конце
